@@ -2,6 +2,7 @@
 layout: default
 color: blue
 title: Resume Template
+occupation: Brain
 occupations:
     - title: "Creative Developer"
     - title: "UI / UX Designer"
@@ -25,10 +26,11 @@ occupations:
                 </h1>
                 
                 <h1 class="small"><span id="js-rotating">
-                    
+                    {{ page.occupation }}
                     {% for occupation in page.occupations %}
-                        {{ occupation.title }} | 
+                       | {{ occupation.title }}  
                     {% endfor %}
+                    
                 </span></h1>
                 
                 <p>28 years young, husband and father, coffee addict.</p>
