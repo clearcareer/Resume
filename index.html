@@ -4,7 +4,6 @@ color: blue
 navbarbrand: John
 title: Resume Template
 resumefile: assets/resume.pdf
-occupation: Brain Eater
 occupations:
     - title: Creative Developer
     - title: UI / UX Designer
@@ -55,7 +54,36 @@ goals:
     - name: analytics
       icon: plane
       description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-
+achievements:
+    - name: Expertise Award
+      description: Outstanding social media presence
+      icon: twitter
+milestones:
+    - name: Cups of Coffee
+      number: 562
+      icon: facebook
+    - name: Cups of Coffee
+      number: 562
+      icon: facebook
+    - name: Cups of Coffee
+      number: 562
+      icon: facebook
+    - name: Cups of Coffee
+      number: 562
+      icon: facebook
+social:
+    - name: Facebook
+      link: #
+      icon: facebook
+    - name: Twitter
+      link: #
+      icon: twitter
+    - name: Instagram
+      link: #
+      icon: instagram
+    - name: Github
+      link: #
+      icon: github
 ---
 
 
@@ -74,11 +102,9 @@ goals:
                 <h1 class="editable">I'm Iskender</h1>
                 
                 <h1 class="small"><span id="js-rotating">
-                    {{ page.occupation }}
-                    {% for occupation in page.occupations %}
-                    {% if occupation.title != nil %}
+                    {{ page.occupations[0].title }}
+                    {% for occupation in page.occupations offset:1 %}
                        | {{ occupation.title }}  
-                    {% endif %}
                     {% endfor %}
                     
                 </span></h1>
@@ -87,7 +113,7 @@ goals:
                 
                 <div class="page-scroll">
                     <a href="#profile" class="btn btn-lg btn-custom">
-                        Know Me Better
+                        More About Me
                     </a>
                 </div>
                 <!-- //.page-scroll -->
@@ -658,58 +684,24 @@ goals:
                 
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-
+                        
+                        {% for achievement in page.achievements %}
                         <!-- ACCOLADES START -->
                         <div class="accolades">
                             <div class="item">
-                                <i class="icon-Twitter"></i>
+                                <i class="fa fa-{{ achievement.icon }}"></i>
 
                                 <div class="content">
-                                    <h3>Marketing Excellence Awards 2014</h3>
+                                    <h3>{{ achievement.name }}</h3>
 
-                                    <p class="text-grey">Excellence in Social Media Marketing</p>
+                                    <p class="text-grey">{{ achievement.description }}</p>
                                 </div>
                                 <!-- //.content -->
                             </div>
                             <!-- //.item -->
 
-                            <div class="item">
-                                <i class="icon-Idea-2"></i>
+                            {% endfor %}
 
-                                <div class="content">
-                                    <h3>The "Big Idea" Competition 2012</h3>
-
-                                    <p class="text-grey">Top 3 Team</p>
-                                </div>
-                                <!-- //.content -->
-                            </div>
-                            <!-- //.item -->
-
-                            <div class="item">
-                                <i class="icon-Brush"></i>
-
-                                <div class="content">
-                                    <h3>Water Seven Art Directors Club Awards 2010</h3>
-
-                                    <p class="text-grey">Finalist - Design</p>
-
-                                    <p class="text-grey">Finalist - Print Ad</p>
-                                </div>
-                                <!-- //.content -->
-                            </div>
-                            <!-- //.item -->
-
-                            <div class="item">
-                                <i class="icon-Funky"></i>
-
-                                <div class="content">
-                                    <h3>Young Guns Award 2009</h3>
-
-                                    <p class="text-grey">Finalist - Digital Campaign</p>
-                                </div>
-                                <!-- //.content -->
-                            </div>
-                            <!-- //.item -->
                         </div>
                         <!-- //ACCOLADES END -->
 
@@ -748,61 +740,23 @@ goals:
                 <!-- MILESTONES START -->
                 <div class="milestones">
                     <div class="row">
+
+                        {% for milestone in page.milestones limit:4 %}
                         <div class="col-sm-6 col-md-3 item">
                             <div class="circle">
-                                <i class="icon-Coffee"></i>
+                                <i class="fa fa-{{milestone.icon}}"></i>
                             </div>
                             <!-- //.circle -->
 
-                            <span class="number" data-from="10" data-to="5012" data-refresh-interval="100">
-                                10
+                            <span class="number" data-from="10" data-to="{{ milestone.number }}" data-refresh-interval="100">
+                                {{ milestone.number }}
                             </span>
 
-                            <h4>Cups of Coffee</h4>
+                            <h4>{{ milestone.name }}</h4>
                         </div>
                         <!-- //.item -->
-
-                        <div class="col-sm-6 col-md-3 item">
-                            <div class="circle">
-                                <i class="icon-Clock"></i>
-                            </div>
-                            <!-- //.circle -->
-
-                            <span class="number" data-from="10" data-to="4210" data-refresh-interval="100">
-                                10
-                            </span>
-
-                            <h4>Hours Worked</h4>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-6 col-md-3 item">
-                            <div class="circle">
-                                <i class="icon-Coding"></i>
-                            </div>
-                            <!-- //.circle -->
-
-                            <span class="number" data-from="10" data-to="505" data-refresh-interval="10">
-                                10
-                            </span>
-
-                            <h4>Succesful Projects</h4>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-6 col-md-3 item">
-                            <div class="circle">
-                                <i class="icon-Smile"></i>
-                            </div>
-                            <!-- //.circle -->
-
-                            <span class="number" data-from="10" data-to="253" data-refresh-interval="10">
-                                5
-                            </span>
-
-                            <h4>Happy Clients</h4>
-                        </div>
-                        <!-- //.item -->
+                        {% endfor %}
+                        
                     </div>
                     <!-- //.row -->
                 </div>
@@ -815,162 +769,21 @@ goals:
     <!-- //MILESTONES SECTION END -->
     
     
-    <!-- WORK PROCESS SECTION START -->
-    <section id="work-process" class="section">
-        <div class="container section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="section-title">Work Process</h2>
-
-                        <p class="section-subtitle">
-                            As a human being, I'm work in process.
-                        </p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="text-grey text-justify">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-                        </p>
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-                
-                <!-- WORK PROCESS START -->
-                <div class="work-process">
-                    <div class="row">
-                        <div class="col-sm-2 col-md-2 item no-margin first">
-                            <div class="inner-content">
-                                <i class="icon-Light-Bulb2"></i>
-
-                                <span class="title">1. Idea</span>
-
-                                <span class="dot"></span>
-                            </div>
-                            <!-- //.inner-content -->
-
-                            <i class="icon-Arrow icon-Down-3"></i>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-2 col-md-2 item">
-                            <div class="inner-content">
-                                <i class="icon-Pencil"></i>
-
-                                <span class="title">2. Sketch</span>
-                            </div>
-                            <!-- //.inner-content -->
-
-                            <i class="icon-Arrow icon-Up-3"></i>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-2 col-md-2 item no-margin">
-                            <div class="inner-content">
-                                <i class="icon-Monitor-2"></i>
-
-                                <span class="title">3. Design</span>
-                            </div>
-                            <!-- //.inner-content -->
-
-                            <i class="icon-Arrow icon-Down-3"></i>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-2 col-md-2 item">
-                            <div class="inner-content">
-                                <i class="icon-Coding"></i>
-
-                                <span class="title">4. Develop</span>
-                            </div>
-                            <!-- //.inner-content -->
-
-                            <i class="icon-Arrow icon-Up-3"></i>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-2 col-md-2 item no-margin">
-                            <div class="inner-content">
-                                <i class="icon-Bug"></i>
-
-                                <span class="title">5. Test</span>
-                            </div>
-                            <!-- //.inner-content -->
-
-                            <i class="icon-Arrow icon-Down-3"></i>
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-2 col-md-2 item last">
-                            <div class="inner-content">
-                                <i class="icon-Rocket"></i>
-
-                                <span class="title">6. Launch</span>
-
-                                <span class="dot"></span>
-                            </div>
-                            <!-- //.inner-content -->
-                        </div>
-                        <!-- //.item -->
-                    </div>
-                    <!-- //.row -->
-                </div>
-                <!-- //WORK PROCESS END -->
-                
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="text-grey text-justify">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                        </p>
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </section>
-    <!-- //WORK PROCESS SECTION END -->
+    
     
     
     <!-- CONTACT SECTION START -->
     <section id="contact" class="section">
         <div class="container section-wrapper">
             <div class="section-content">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="section-title">Contact Me</h2>
-
-                        <p class="section-subtitle">
-                            Have a project you'd like to discuss?
-                        </p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
+                
                 
                 <div class="row">
                     <div class="col-md-12">
 
                         <!-- CONTACT DETAILS START -->
                         <div class="contact-details text-center">
-                            <div class="speech-bubble">
-                                <i class="icon-Speach-Bubble11"></i>
-
-                                <h4 class="text-grey">
-                                    Say<br />Hello
-                                </h4>
-                            </div>
+                            
                             <!-- //.speech-bubble -->
 
                             <h2>Nick <strong>Berg</strong></h2>
@@ -992,3 +805,44 @@ goals:
     <!-- //CONTACT SECTION END -->
     
 </body>
+
+<!-- FOOTER START -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-scroll">
+                        <a href="#page-top"><i class="icon-Arrow-Up"></i></a>
+                    </div>
+                    <!-- //.page-scroll -->
+                    
+                    <ul class="list-inline social-icons">
+                        {% for item in page.social %}
+                        <li>
+                            <div class="item">
+                                <a href="{{ item.link }}" target="_blank"><i class="fa fa-{{ item.icon }}"></i></a>
+                            </div>
+                            <!-- //.item -->
+                        </li>
+                        {% endfor %}
+                        
+                    </ul>
+                </div>
+                <!-- //.col-md-12 -->
+            </div>
+            <!-- //.row -->
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright text-center">
+                        <p class="text-grey">&copy; 2016 ClearCareer by <a href="http://www.twitter.com/izzydoesizzy">Iskender Piyale-Sheard</a>.</p>
+                    </div>
+                    <!-- //.copyright -->
+                </div>
+                <!-- //.col-md-12 -->
+            </div>
+            <!-- //.row -->
+        </div>
+        <!-- //.container -->
+    </footer>
+    <!-- //FOOTER END -->
