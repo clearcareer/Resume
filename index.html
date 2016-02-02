@@ -4,6 +4,7 @@ color: blue
 navbarbrand: John
 fullname: John Smith
 email: johnsmith@example.com
+profilepic: assets/images/profile-picture-2.jpg
 title: Resume Template
 resumefile: assets/resume.pdf
 occupations:
@@ -43,6 +44,10 @@ workexp:
       position: Engineer
       company: Google
       description: Things are different here
+achievements:
+    - name: Expertise Award
+      description: Outstanding social media presence
+      icon: twitter
 skills:
     - name: Javascript
       level: 65
@@ -56,23 +61,6 @@ skills:
       level: 65
     - name: HTML/CSS
       level: 47
-achievements:
-    - name: Expertise Award
-      description: Outstanding social media presence
-      icon: twitter
-milestones:
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
 social:
     - name: Facebook
       link: #
@@ -153,23 +141,11 @@ social:
                     </li>
                     
                     <li class="page-scroll">
-                        <a href="#portfolio">Portfolio</a>
-                    </li>
-                    
-                    <li class="page-scroll">
-                        <a href="#services">Services</a>
+                        <a href="#services">Goals</a>
                     </li>
                     
                     <li class="page-scroll">
                         <a href="#resume">Resume</a>
-                    </li>
-                    
-                    <li class="page-scroll">
-                        <a href="#references">References</a>
-                    </li>
-                    
-                    <li class="page-scroll">
-                        <a href="#skills">Skills</a>
                     </li>
                     
                     <li class="page-scroll">
@@ -188,11 +164,22 @@ social:
     <section id="profile" class="section">
         <div class="container section-wrapper">
             <div class="section-content">
-                <div class="row">          
-                    <div class="col-md-7 match-height">
+                <div class="row">
+                    
+                    <!-- PROFILE PICTURE START -->
+                    <div class="col-md-4 hidden-xs hidden-sm match-height pp-wrapper">
+                        <div class="profile-picture style-two">
+                            <img src="{{ page.profilepic }}" alt="profile picture" class="img-responsive"/>
+                            
+                            <h4 class="title editable">Creative Developer</h4>
+                        </div>
+                    </div>
+                    <!-- //PROFILE PICTURE END -->
+                    
+                    <div class="col-md-8 match-height">
 
                         <!-- PROFILE TEXT START -->
-                        <div class="profile-text padding-right-yes">
+                        <div class="profile-text padding-left-yes">
                             <div class="row">
                                 <div class="col-md-12">
                                     <h2 class="section-title editable">Hello, My Name is Berg.</h2>
@@ -218,22 +205,23 @@ social:
                         <!-- //PROFILE TEXT END -->
 
                         <!-- CONTACT DETAILS START -->
-                        <div class="contact-details padding-right-yes">
+                        <div class="contact-details padding-left-yes">
                             <div class="row">
                                 <div class="col-sm-6 col-md-5">
                                     <h4 class="editable">Contact Details</h4>
 
-                                    <ul class="list-unstyled text-grey editable">
-                                        <li class="editable">{{ page.fullname }}</li>
+                                    <ul class="list-unstyled text-grey">
+                                        <li class="editable">Nick Berg</li>
                                         <li class="editable">123 Water Seven, Grand Line</li>
                                         <li class="editable">+123 456 7890</li>
-                                        <li class="editable">{{ page.email }}</li>
+                                        <li class="editable">hello@nickberg.com</li>
+                                        <li class="editable">www.nickberg.com</li>
                                     </ul>
                                 </div>
                                 <!-- //.col-md-5 -->
 
                                 <div class="col-sm-6 col-md-7">
-                                    <a href="{{ page.resumefile }}" class="btn btn-lg btn-custom">
+                                    <a href="#" class="btn btn-lg btn-custom">
                                         <i class="icon-File-Download"></i> Download Resume
                                     </a>
                                 </div>
@@ -244,15 +232,7 @@ social:
                         <!-- //CONTACT DETAILS END -->
 
                     </div>
-                    <!-- //.col-md-7 -->
-
-                    <!-- PROFILE PICTURE START -->
-                    <div class="col-md-5 hidden-xs hidden-sm match-height pp-wrapper">
-                        <div class="profile-picture style-one">
-                            <img src="assets/images/profile-picture-1.jpg" alt="profile picture" class="img-responsive" />
-                        </div>
-                    </div>
-                    <!-- //PROFILE PICTURE END -->
+                    <!-- //.col-md-8 -->
                 </div>
                 <!-- //.row -->
             </div>
@@ -263,70 +243,10 @@ social:
     <!-- //PROFILE SECTION END -->
     
     
-    <!-- PORTFOLIO SECTION START -->
-    <section id="portfolio" class="section">
-        <div class="container-fluid section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="section-title editable">My Latest Work</h2>
-
-                        <p class="section-subtitle editable">I'm looking to expand my portfolio while I'm on top and while I'm young.</p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-                
-                
-                <!-- PORTFOLIO START -->
-                <div class="portfolio">
-                    <div class="row">
-
-                        {% for item in site.portfolio %}
-                       
-                        <div class="item col-sm-6 col-md-3">
-                            <div class="project-wrapper">
-                                <div class="project-link">
-                                    <a href="{{ item.link }}" class="zoom" title="{{ item.name }}">
-                                        <i class="icon-Full-Screen"></i>
-                                    </a>
-
-                                    <a href="{{ item.link }}" target="_blank" class="external-link">
-                                        <i class="icon-Link"></i>
-                                    </a>
-                                </div>
-                                <!-- //.project-link -->
-
-                                <div class="project-title">
-                                    <h4>{{ item.name }}</h4>
-                                </div>
-                                <!-- //.project-title -->
-
-                                <img src="{{ item.image }}" alt="" class="img-responsive" />
-                            </div>
-                            <!-- //.project-wrapper -->
-                        </div>
-                        <!-- //.item -->
-                        {% endfor %}
-                       
-
-                        
-                    </div>
-                    <!-- //.row -->
-                </div>
-                <!-- PORTFOLIO END -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container-fluid -->
-    </section>
-    <!-- //PORTFOLIO SECTION END -->
     
     
     <!-- SERVICES SECTION START -->
-    <section id="services" class="section">
+    <section id="services" class="section ligher-bg">
         <div class="container section-wrapper">
             <div class="section-content">
                 <div class="row">
@@ -349,7 +269,7 @@ social:
                     <div class="row">
 
                         {% for goal in page.goals %}
-                        <div class="col-sm-4 col-md-4 item top dark-bg match-height">
+                        <div class="col-sm-4 col-md-4 item top match-height">
                             <div class="inner-content">
                                 <p class="text-center">
                                     <i class="fa fa-{{ goal.icon }} fa-3x colored-text"></i>
@@ -383,7 +303,7 @@ social:
     
     <!-- RESUME SECTION START -->
     <section id="resume" class="section">
-        <div class="container section-wrapper">
+        <div class="container section-wrapper dark-bg">
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
@@ -524,103 +444,9 @@ social:
         <!-- //.container -->
     </section>
     <!-- //RESUME SECTION END -->
-    
-    
-    <!-- REFERENCES SECTION START -->
-    <section id="references" class="section bg-image-yes">
-        <div class="container-fluid section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="section-title">References</h2>
 
-                        <p class="section-subtitle">Testimonials are enough to convince people for now.</p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-12 -->
-                </div>
-                <!-- //.row -->
-                
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <div class="flexslider references">
-                            <div class="slides">
-
-                                {% for testimonial in site.testimonials %}
-                                <div class="item">
-                                    <div class="animated" data-animation-effect="flipInX">
-                                        <div class="profile hidden-xs">
-                                            <img src="{{ testimonial.photo }}" alt="" class="img-responsive img-circle img-thumbnail" />
-                                        </div>
-
-                                        <div class="content">
-                                            <h3>{{ testimonial.company }}</h3>
-
-                                            <p>
-                                                "{{ testimonial.description }}"
-                                            </p>
-
-                                            <p class="source">
-                                                {{ testimonial.name }}
-                                                <br />
-                                                <span>{{ testimonial.position }}</span>
-                                            </p>
-                                        </div>
-                                        <!-- //.content -->
-                                    </div>
-                                    <!-- //.animated -->
-                                </div>
-                                <!-- //.item -->
-                                {% endfor %}
-
-                                
-
-                            <div class="flexslider-controls">
-                                <ul class="flex-control-nav">
-
-                                    {% for testimonial in site.testimonials %}
-
-                                    <li>
-                                        <img src="{{ testimonial.photo }}" alt="" class="img-responsive" />
-                                    </li>
-
-                                    {% endfor %}
-                                    
-                                </ul>
-                            </div>
-                            <!-- //.flexslider-controls -->
-
-                            <ul class="flex-direction-nav-custom list-inline hidden-xs">
-                                <li>
-                                    <a class="flex-prev" href="#">
-                                        <i class="icon-Left-3"></i>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a class="flex-next" href="#">
-                                        <i class="icon-Right-3"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- //.flexslider -->
-                    </div>
-                    <!-- //.col-md-8 -->
-                </div>
-                <!-- //.row -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </div>
-</section>
-    <!-- //REFERENCES SECTION END -->
-    
-    
     <!-- SKILLS SECTION START -->
-    <section id="knowledge" class="section">
+    <section id="skills" class="section">
         <div class="container section-wrapper">
             <div class="section-content">
                 <div class="row">
@@ -667,8 +493,8 @@ social:
     <!-- //KNOWLEDGE SECTION END -->
     
     
-    <!-- ACCOLADES SECTION START -->
-    <section id="accolades" class="section">
+    <!-- ACHIEVEMENTS SECTION START -->
+    <section id="achievements" class="section">
         <div class="container section-wrapper">
             <div class="section-content">
                 <div class="row">
@@ -722,52 +548,12 @@ social:
     <!-- //ACCOLADES SECTION END -->
     
     
-    <!-- MILESTONES SECTION START -->
-    <section id="milestones" class="section bg-image-yes">
-        <div class="container-fluid section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title editable">Milestones Achieved</h2>
-
-                        <p class="section-subtitle editable">My path has not been determined. I shall have more experiences and pass many more milestones.</p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-8 -->
-                </div>
-                <!-- //.row -->
-                
-                <!-- MILESTONES START -->
-                <div class="milestones">
-                    <div class="row">
-
-                        {% for milestone in page.milestones limit:4 %}
-                        <div class="col-sm-6 col-md-3 item">
-                            <div class="circle">
-                                <i class="fa fa-{{milestone.icon}}"></i>
-                            </div>
-                            <!-- //.circle -->
-
-                            <span class="number" data-from="10" data-to="{{ milestone.number }}" data-refresh-interval="100">
-                                {{ milestone.number }}
-                            </span>
-
-                            <h4>{{ milestone.name }}</h4>
-                        </div>
-                        <!-- //.item -->
-                        {% endfor %}
-                        
-                    </div>
-                    <!-- //.row -->
-                </div>
-                <!-- //MILESTONES END -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </section>
-    <!-- //MILESTONES SECTION END -->
+    
+    
+    
+    
+    
+    
     
     
     

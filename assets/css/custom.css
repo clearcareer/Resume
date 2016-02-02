@@ -1,9 +1,17 @@
-#knowledge {
-	padding-top: 100px;
-}
-
 .accolades > .item > i {
     background-color: transparent;
     /* color: inherit; */
     border: 2px solid;
+}
+
+.hero-text h1 {
+    letter-spacing: normal;
+}
+
+#services, #skills, #contact {
+	background-color: #171717;
+}
+
+#resume, footer.footer {
+	background-color: #0d0c0d;
 }
