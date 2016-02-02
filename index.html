@@ -4,7 +4,8 @@ color: blue
 navbarbrand: John
 fullname: John Smith
 email: johnsmith@example.com
-profilepic: assets/images/profile-picture-2.jpg
+profilepic_path: assets/images/profile-picture-2.jpg
+background_image_path: assets/images/bg-hero.jpg
 title: Resume Template
 resumefile: assets/resume.pdf
 occupations:
@@ -44,10 +45,6 @@ workexp:
       position: Engineer
       company: Google
       description: Things are different here
-achievements:
-    - name: Expertise Award
-      description: Outstanding social media presence
-      icon: twitter
 skills:
     - name: Javascript
       level: 65
@@ -61,6 +58,10 @@ skills:
       level: 65
     - name: HTML/CSS
       level: 47
+achievements:
+    - name: Expertise Award
+      description: Outstanding social media presence
+      icon: twitter
 social:
     - name: Facebook
       link: #
@@ -86,7 +87,7 @@ social:
 
   
     <!-- HERO START -->
-    <header id="home" class="hero">
+    <header id="home" class="hero" style="background-image: url('{{ page.background_image_path }}');">
         <div class="hero-body">
             <div class="hero-text text-center">
                 <h1 class="editable">I'm Iskender</h1>
@@ -169,7 +170,7 @@ social:
                     <!-- PROFILE PICTURE START -->
                     <div class="col-md-4 hidden-xs hidden-sm match-height pp-wrapper">
                         <div class="profile-picture style-two">
-                            <img src="{{ page.profilepic }}" alt="profile picture" class="img-responsive"/>
+                            <img src="{{ page.profilepic_path }}" alt="profile picture" class="img-responsive"/>
                             
                             <h4 class="title editable">Creative Developer</h4>
                         </div>
@@ -221,7 +222,7 @@ social:
                                 <!-- //.col-md-5 -->
 
                                 <div class="col-sm-6 col-md-7">
-                                    <a href="#" class="btn btn-lg btn-custom">
+                                    <a href="{{ page.resumefile }}" class="btn btn-lg btn-custom">
                                         <i class="icon-File-Download"></i> Download Resume
                                     </a>
                                 </div>
