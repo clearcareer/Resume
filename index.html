@@ -1,13 +1,13 @@
 ---
 layout: default
-color: blue
-navbarbrand: John
-fullname: John Smith
+page_template_color: blue
+navbar_brand: John
+full_name: John Smith
 email: johnsmith@example.com
 profilepic_path: assets/images/profile-picture-2.jpg
 background_image_path: assets/images/bg-hero.jpg
 title: Resume Template
-resumefile: assets/resume.pdf
+upload_resume: assets/resume.pdf
 occupations:
     - title: Creative Developer
     - title: UI / UX Designer
@@ -127,7 +127,7 @@ social:
                     <span class="icon-bar"></span>
                 </button>
                 
-                <a class="navbar-brand visible-xs visible-sm" href="#page-top">{{ page.navbarbrand }}</a>
+                <a class="navbar-brand visible-xs visible-sm" href="#page-top">{{ page.navbar_brand }}</a>
             </div>
             <!-- //.navbar-header -->
             
@@ -223,7 +223,7 @@ social:
                                 <!-- //.col-md-5 -->
 
                                 <div class="col-sm-6 col-md-7">
-                                    <a href="{{ page.resumefile }}" class="btn btn-lg btn-custom">
+                                    <a href="{{ page.upload_resume }}" class="btn btn-lg btn-custom">
                                         <i class="icon-File-Download"></i> Download Resume
                                     </a>
                                 </div>
@@ -575,7 +575,7 @@ social:
                             
                             <!-- //.speech-bubble -->
 
-                            <h2 class="editable">{{page.fullname}}</h2>
+                            <h2 class="editable">{{page.full_name}}</h2>
 
                             <h4 class="text-grey editable"><a href="mailto:{{ page.email }}">{{page.email}}</a></h4>
 
