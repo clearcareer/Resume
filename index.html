@@ -6,7 +6,6 @@ full_name: John Smith
 email: johnsmith@example.com
 profilepic_path: assets/images/profile-picture-2.jpg
 background_image_path: assets/images/bg-hero.jpg
-title: Resume Template
 upload_resume_path: assets/resume.pdf
 occupations:
     - title: Creative Developer
@@ -34,7 +33,7 @@ education:
       degree: Senior Designer
       institution: Brain Science
       description: Things are different here.
-workexp: 
+work_experience: 
     - number: 1
       years: 2012-2014
       position: Senior Designer
@@ -62,7 +61,7 @@ achievements:
     - name: Expertise Award
       description: Outstanding social media presence
       icon: twitter
-social:
+social_icons:
     - name: Facebook
       link: #
       icon: facebook
@@ -395,7 +394,7 @@ social:
                         
                         <div class="panel-group resume" id="work">
 
-                            {% for item in page.workexp %}
+                            {% for item in page.work_experience %}
                             <div class="resume-item">
                                 <div class="resume-year">
                                     <span class="resume-year">{{ item.years }}</span>
@@ -606,7 +605,7 @@ social:
                     <!-- //.page-scroll -->
                     
                     <ul class="list-inline social-icons">
-                        {% for item in page.social %}
+                        {% for item in page.social_icons %}
                         <li>
                             <div class="item">
                                 <a href="{{ item.link }}" target="_blank"><i class="fa fa-{{ item.icon }}"></i></a>
