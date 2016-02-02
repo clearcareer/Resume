@@ -1,91 +1,89 @@
 ---
 layout: default
-color: blue
+color: red
 navbarbrand: John
-fullname: John Smith
-email: johnsmith@example.com
 title: Resume Template
 resumefile: assets/resume.pdf
 occupations:
-    - title: Creative Developer
-    - title: UI / UX Designer
-    - title: Professional Ballerina
-    - title: Superhero Batman
-goals:
-    - name: analytics
-      icon: plane
-      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    - name: analytics
-      icon: plane
-      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    - name: analytics
-      icon: plane
-      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-education: 
-    - number: 1
-      years: 2012-2014
-      degree: Senior Designer
-      institution: ThoughtWorks
-      description: Studied Chemical Engineering and Bioinformatics.
-    - number: 2
-      years: 2042-2022
-      degree: Senior Designer
-      institution: Brain Science
-      description: Things are different here.
-workexp: 
-    - number: 1
-      years: 2012-2014
-      position: Senior Designer
-      company: ThoughtWorks
-      description: Studied Chemical Engineering and Bioinformatics.
-    - number: 2
-      years: 2013-2014
-      position: Engineer
-      company: Google
-      description: Things are different here
+  - title: Creative Developer
+  - title: UI / UX Designer
+  - title: Professional Ballerina
+  - title: Superhero Batman
 skills:
-    - name: Javascript
-      level: 65
-    - name: HTML/CSS
-      level: 47
-    - name: Javascript
-      level: 65
-    - name: HTML/CSS
-      level: 47
-    - name: Javascript
-      level: 65
-    - name: HTML/CSS
-      level: 47
+  - name: Javascript
+    level: 65
+  - name: HTML/CSS
+    level: 47
+  - name: Javascript
+    level: 65
+  - name: HTML/CSS
+    level: 47
+  - name: Javascript
+    level: 65
+  - name: HTML/CSS
+    level: 47
+experience:
+  - number: 1
+    years: 2012-2014
+    position: Senior Designer
+    company: ThoughtWorks
+    description: Studied Chemical Engineering and Bioinformatics.
+  - number: 2
+    years: 2013-2014
+    position: Engineer
+    company: Google
+    description: Things are different here
+education:
+  - number: 1
+    years: 2012-2014
+    degree: Senior Designer
+    institution: ThoughtWorks
+    description: Studied Chemical Engineering and Bioinformatics.
+  - number: 2
+    years: 2042-2022
+    degree: Senior Designer
+    institution: Brain Science
+    description: Things are different here.
+goals:
+  - name: analytics
+    icon: plane
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+  - name: analytics
+    icon: plane
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+  - name: analytics
+    icon: plane
+    description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
 achievements:
-    - name: Expertise Award
-      description: Outstanding social media presence
-      icon: twitter
+  - name: Expertise Award
+    description: Outstanding social media presence
+    icon: twitter
 milestones:
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
-    - name: Cups of Coffee
-      number: 562
-      icon: facebook
+  - name: Cups of Coffee
+    number: 562
+    icon: facebook
+  - name: Cups of Coffee
+    number: 562
+    icon: facebook
+  - name: Cups of Coffee
+    number: 562
+    icon: facebook
+  - name: Cups of Coffee
+    number: 562
+    icon: facebook
 social:
-    - name: Facebook
-      link: #
-      icon: facebook
-    - name: Twitter
-      link: #
-      icon: twitter
-    - name: Instagram
-      link: #
-      icon: instagram
-    - name: Github
-      link: #
-      icon: github
+  - name: Facebook
+    link: ''
+    icon: facebook
+  - name: Twitter
+    link: ''
+    icon: twitter
+  - name: Instagram
+    link: ''
+    icon: instagram
+  - name: Github
+    link: ''
+    icon: github
 ---
 
 
@@ -354,8 +352,8 @@ social:
                                 <p class="text-center">
                                     <i class="fa fa-{{ goal.icon }} fa-3x colored-text"></i>
                                 
-                                    <h4 class="text-center">{{ goal.name }}</h4>
-                                </p>
+                                    </p><h4 class="text-center">{{ goal.name }}</h4>
+                                <p></p>
                             
                                 <p>
                                     {{ goal.description }}
