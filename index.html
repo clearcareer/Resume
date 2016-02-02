@@ -2,6 +2,8 @@
 layout: default
 color: blue
 navbarbrand: John
+fullname: John Smith
+email: johnsmith@example.com
 title: Resume Template
 resumefile: assets/resume.pdf
 occupations:
@@ -9,6 +11,38 @@ occupations:
     - title: UI / UX Designer
     - title: Professional Ballerina
     - title: Superhero Batman
+goals:
+    - name: analytics
+      icon: plane
+      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    - name: analytics
+      icon: plane
+      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    - name: analytics
+      icon: plane
+      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+education: 
+    - number: 1
+      years: 2012-2014
+      degree: Senior Designer
+      institution: ThoughtWorks
+      description: Studied Chemical Engineering and Bioinformatics.
+    - number: 2
+      years: 2042-2022
+      degree: Senior Designer
+      institution: Brain Science
+      description: Things are different here.
+workexp: 
+    - number: 1
+      years: 2012-2014
+      position: Senior Designer
+      company: ThoughtWorks
+      description: Studied Chemical Engineering and Bioinformatics.
+    - number: 2
+      years: 2013-2014
+      position: Engineer
+      company: Google
+      description: Things are different here
 skills:
     - name: Javascript
       level: 65
@@ -22,38 +56,6 @@ skills:
       level: 65
     - name: HTML/CSS
       level: 47
-experience: 
-    - number: 1
-      years: 2012-2014
-      position: Senior Designer
-      company: ThoughtWorks
-      description: Studied Chemical Engineering and Bioinformatics.
-    - number: 2
-      years: 2013-2014
-      position: Engineer
-      company: Google
-      description: Things are different here
-education: 
-    - number: 1
-      years: 2012-2014
-      degree: Senior Designer
-      institution: ThoughtWorks
-      description: Studied Chemical Engineering and Bioinformatics.
-    - number: 2
-      years: 2042-2022
-      degree: Senior Designer
-      institution: Brain Science
-      description: Things are different here.
-goals:
-    - name: analytics
-      icon: plane
-      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    - name: analytics
-      icon: plane
-      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-    - name: analytics
-      icon: plane
-      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 achievements:
     - name: Expertise Award
       description: Outstanding social media presence
@@ -222,11 +224,10 @@ social:
                                     <h4 class="editable">Contact Details</h4>
 
                                     <ul class="list-unstyled text-grey editable">
-                                        <li class="editable">Nick Berg</li>
+                                        <li class="editable">{{ page.fullname }}</li>
                                         <li class="editable">123 Water Seven, Grand Line</li>
                                         <li class="editable">+123 456 7890</li>
-                                        <li class="editable">hello@nickberg.com</li>
-                                        <li class="editable">www.nickberg.com</li>
+                                        <li class="editable">{{ page.email }}</li>
                                     </ul>
                                 </div>
                                 <!-- //.col-md-5 -->
@@ -472,7 +473,7 @@ social:
                         
                         <div class="panel-group resume" id="work">
 
-                            {% for item in page.experience %}
+                            {% for item in page.workexp %}
                             <div class="resume-item">
                                 <div class="resume-year">
                                     <span class="resume-year">{{ item.years }}</span>
@@ -672,9 +673,9 @@ social:
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">Accolades</h2>
+                        <h2 class="section-title editable">Achievements</h2>
 
-                        <p class="section-subtitle">The accolades, just like the scrapes and bruises, fade in the end, and all you're left with is your ambition.</p>
+                        <p class="section-subtitle editable">The accolades, just like the scrapes and bruises, fade in the end, and all you're left with is your ambition.</p>
 
                         <span class="divider center"></span>
                     </div>
@@ -727,9 +728,9 @@ social:
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">Milestones Achieved</h2>
+                        <h2 class="section-title editable">Milestones Achieved</h2>
 
-                        <p class="section-subtitle">My path has not been determined. I shall have more experiences and pass many more milestones.</p>
+                        <p class="section-subtitle editable">My path has not been determined. I shall have more experiences and pass many more milestones.</p>
 
                         <span class="divider center"></span>
                     </div>
@@ -786,9 +787,9 @@ social:
                             
                             <!-- //.speech-bubble -->
 
-                            <h2>Nick <strong>Berg</strong></h2>
+                            <h2 class="editable">{{page.fullname}}</h2>
 
-                            <h4 class="text-grey">hello@nickberg.com</h4>
+                            <h4 class="text-grey editable"><a href="mailto:{{ page.email }}">{{page.email}}</a></h4>
 
                             <span class="divider center"></span>
                         </div>
@@ -835,7 +836,7 @@ social:
             <div class="row">
                 <div class="col-md-12">
                     <div class="copyright text-center">
-                        <p class="text-grey">&copy; 2016 ClearCareer by <a href="http://www.twitter.com/izzydoesizzy">Iskender Piyale-Sheard</a>.</p>
+                        <p class="text-grey">&copy; 2016 <a href="http://www.clearcareer.ca" target="_blank">ClearCareer</a> by <a href="http://www.twitter.com/izzydoesizzy" target="_blank">Iskender Piyale-Sheard</a>.</p>
                     </div>
                     <!-- //.copyright -->
                 </div>
