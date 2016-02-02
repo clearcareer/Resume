@@ -1,11 +1,9 @@
-.services .item > .inner-content {
-  text-align: justify;
-}
-
-p.text-grey {
-	text-align: justify;
-}
-
 #knowledge {
 	padding-top: 100px;
+}
+
+.accolades > .item > i {
+    background-color: transparent;
+    /* color: inherit; */
+    border: 2px solid;
 }
