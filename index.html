@@ -3,13 +3,59 @@ layout: default
 color: blue
 navbarbrand: John
 title: Resume Template
+resumefile: assets/resume.pdf
 occupation: Brain Eater
 occupations:
-  - title: Creative Developer
-  - title: UI / UX Designer
-  - title: Professional Ballerina
-  - title: Superhero Batman
-resumefile: assets/resume.pdf
+    - title: Creative Developer
+    - title: UI / UX Designer
+    - title: Professional Ballerina
+    - title: Superhero Batman
+skills:
+    - name: Javascript
+      level: 65
+    - name: HTML/CSS
+      level: 47
+    - name: Javascript
+      level: 65
+    - name: HTML/CSS
+      level: 47
+    - name: Javascript
+      level: 65
+    - name: HTML/CSS
+      level: 47
+experience: 
+    - number: 1
+      years: 2012-2014
+      position: Senior Designer
+      company: ThoughtWorks
+      description: Studied Chemical Engineering and Bioinformatics.
+    - number: 2
+      years: 2013-2014
+      position: Engineer
+      company: Google
+      description: Things are different here
+education: 
+    - number: 1
+      years: 2012-2014
+      degree: Senior Designer
+      institution: ThoughtWorks
+      description: Studied Chemical Engineering and Bioinformatics.
+    - number: 2
+      years: 2042-2022
+      degree: Senior Designer
+      institution: Brain Science
+      description: Things are different here.
+goals:
+    - name: analytics
+      icon: plane
+      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    - name: analytics
+      icon: plane
+      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+    - name: analytics
+      icon: plane
+      description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
 ---
 
 
@@ -150,11 +196,11 @@ resumefile: assets/resume.pdf
                                     <h4 class="editable">Contact Details</h4>
 
                                     <ul class="list-unstyled text-grey editable">
-                                        <li>Nick Berg</li>
-                                        <li>123 Water Seven, Grand Line</li>
-                                        <li>+123 456 7890</li>
-                                        <li>hello@nickberg.com</li>
-                                        <li>www.nickberg.com</li>
+                                        <li class="editable">Nick Berg</li>
+                                        <li class="editable">123 Water Seven, Grand Line</li>
+                                        <li class="editable">+123 456 7890</li>
+                                        <li class="editable">hello@nickberg.com</li>
+                                        <li class="editable">www.nickberg.com</li>
                                     </ul>
                                 </div>
                                 <!-- //.col-md-5 -->
@@ -196,9 +242,9 @@ resumefile: assets/resume.pdf
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2 class="section-title">My Latest Work</h2>
+                        <h2 class="section-title editable">My Latest Work</h2>
 
-                        <p class="section-subtitle">I'm looking to expand my portfolio while I'm on top and while I'm young.</p>
+                        <p class="section-subtitle editable">I'm looking to expand my portfolio while I'm on top and while I'm young.</p>
 
                         <span class="divider center"></span>
                     </div>
@@ -258,9 +304,9 @@ resumefile: assets/resume.pdf
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">What I'm Looking For</h2>
+                        <h2 class="section-title editable">What I'm Looking For</h2>
 
-                        <p class="section-subtitle">
+                        <p class="section-subtitle editable">
                             It's important that I find a career that suits my needs and helps me grow personally and professionally.
                         </p>
 
@@ -269,93 +315,31 @@ resumefile: assets/resume.pdf
                     <!-- //.col-md-8 -->
                 </div>
                 <!-- //.row -->
-            
+                
+                
                 <!-- SERVICES START -->
                 <div class="services">
                     <div class="row">
+
+                        {% for goal in page.goals %}
                         <div class="col-sm-4 col-md-4 item top dark-bg match-height">
                             <div class="inner-content">
-                                <i class="icon-Chess colored-text"></i>
-
-                                <h4>1. Strategy</h4>
-
-                                <p class="text-grey">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                <p class="text-center">
+                                    <i class="fa fa-{{ goal.icon }} fa-3x colored-text"></i>
+                                
+                                    <h4 class="text-center">{{ goal.name }}</h4>
+                                </p>
+                            
+                                <p>
+                                    {{ goal.description }}
                                 </p>
                             </div>
                             <!-- //.inner-content -->
                         </div>
                         <!-- //.item -->
+                        {% endfor %}
 
-                        <div class="col-sm-4 col-md-4 item top match-height">
-                            <div class="inner-content">
-                                <i class="icon-Leafs-2 colored-text"></i>
-
-                                <h4>2. Branding</h4>
-
-                                <p class="text-grey">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                </p>
-                            </div>
-                            <!-- //.inner-content -->
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-4 col-md-4 item top dark-bg match-height">
-                            <div class="inner-content">
-                                <i class=" icon-Transform-2 colored-text"></i>
-
-                                <h4>3. Web Design</h4>
-
-                                <p class="text-grey">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                </p>
-                            </div>
-                            <!-- //.inner-content -->
-                        </div>
-                        <!-- //.item -->
                         
-                        <div class="col-sm-4 col-md-4 item match-height">
-                            <div class="inner-content">
-                                <i class="icon-Speach-Bubble3 colored-text"></i>
-
-                                <h4>4. Social Media</h4>
-
-                                <p class="text-grey">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                </p>
-                            </div>
-                            <!-- //.inner-content -->
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-4 col-md-4 item dark-bg match-height">
-                            <div class="inner-content">
-                                <i class="icon-Monitor-Tablet colored-text"></i>
-
-                                <h4>5. Development</h4>
-
-                                <p class="text-grey">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                </p>
-                            </div>
-                            <!-- //.inner-content -->
-                        </div>
-                        <!-- //.item -->
-
-                        <div class="col-sm-4 col-md-4 item match-height">
-                            <div class="inner-content">
-                                <i class="icon-Consulting colored-text"></i>
-
-                                <h4>6. Consulting</h4>
-
-                                <p class="text-grey">
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-                                </p>
-                            </div>
-                            <!-- //.inner-content -->
-                        </div>
-                        <!-- //.item -->
                     </div>
                     <!-- //.row -->
                 </div>
@@ -398,8 +382,10 @@ resumefile: assets/resume.pdf
                         </h3>
                         
                         <div class="panel-group resume" id="education">
+                       
+                            {% for item in page.education %}
+                            
 
-                            {% for item in site.education %}
                             <div class="resume-item">
                                 <div class="resume-year">
                                     <span class="resume-year">{{ item.years }}</span>
@@ -407,7 +393,7 @@ resumefile: assets/resume.pdf
                                 <!-- //.resume-year -->
 
                                 <div class="resume-btn">
-                                    <a href="#education1" data-toggle="collapse" data-parent="#education"></a>
+                                    <a href="#education{{ item.number }}" data-toggle="collapse" data-parent="#education"></a>
                                 </div>
                                 <!-- //.resume-btn -->
 
@@ -420,7 +406,7 @@ resumefile: assets/resume.pdf
                                     </div>
                                     <!-- //.panel-heading -->
 
-                                    <div id="education1" class="panel-collapse collapse in">
+                                    <div id="education{{ item.number }}" class="panel-collapse collapse">
                                         <div class="panel-body text-grey">
                                             <p>
                                                 {{ item.description }}
@@ -434,7 +420,10 @@ resumefile: assets/resume.pdf
                             </div>
                             <!-- //.resume-item -->
 
+                            
                             {% endfor %}
+                            
+
 
                              </div>
                         <!-- //.panel-group -->
@@ -457,7 +446,7 @@ resumefile: assets/resume.pdf
                         
                         <div class="panel-group resume" id="work">
 
-                            {% for item in site.experience %}
+                            {% for item in page.experience %}
                             <div class="resume-item">
                                 <div class="resume-year">
                                     <span class="resume-year">{{ item.years }}</span>
@@ -465,7 +454,7 @@ resumefile: assets/resume.pdf
                                 <!-- //.resume-year -->
 
                                 <div class="resume-btn">
-                                    <a href="#work1" data-toggle="collapse" data-parent="#work"></a>
+                                    <a href="#work{{item.number}}" data-toggle="collapse" data-parent="#work"></a>
                                 </div>
                                 <!-- //.resume-btn -->
 
@@ -478,7 +467,7 @@ resumefile: assets/resume.pdf
                                     </div>
                                     <!-- //.panel-heading -->
 
-                                    <div id="work1" class="panel-collapse collapse in">
+                                    <div id="work{{item.number}}" class="panel-collapse collapse in">
                                         <div class="panel-body text-grey">
                                             <p>
                                                 Responsibilities:
@@ -598,139 +587,20 @@ resumefile: assets/resume.pdf
             <!-- //.section-content -->
         </div>
         <!-- //.container -->
-    </div></section>
+    </div>
+</section>
     <!-- //REFERENCES SECTION END -->
     
     
     <!-- SKILLS SECTION START -->
-    <section id="skills" class="section">
-        <div class="container section-wrapper">
-            <div class="section-content">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">Skills & Expertise</h2>
-
-                        <p class="section-subtitle">A winner is someone who recognizes his God-given talents, works his tail off to develop them into skills, and uses these skills to accomplish his goals.</p>
-
-                        <span class="divider center"></span>
-                    </div>
-                    <!-- //.col-md-8 -->
-                </div>
-                <!-- //.row -->
-                
-                <!-- CIRCLE CHART START -->
-                <div class="circle-chart">
-                    <div class="row">
-                        <div class="col-sm-4 col-md-2">
-                            <div class="item">
-                                <div class="circle">
-                                    <span class="item-progress" data-percent="45"></span>
-                                </div>
-                                <!-- //.circle -->
-
-                                <span class="percent">45%</span>
-
-                                <h4 class="text-center">HTML5 + CSS3</h4>
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.col-md-2 -->
-
-                        <div class="col-sm-4 col-md-2">
-                            <div class="item">
-                                <div class="circle">
-                                    <span class="item-progress" data-percent="65"></span>
-                                </div>
-                                <!-- //.circle -->
-
-                                <span class="percent">65%</span>
-
-                                <h4 class="text-center">Angular JS</h4>
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.col-md-2 -->
-
-                        <div class="col-sm-4 col-md-2">
-                            <div class="item">
-                                <div class="circle">
-                                    <span class="item-progress" data-percent="55"></span>
-                                </div>
-                                <!-- //.circle -->
-
-                                <span class="percent">55%</span>
-
-                                <h4 class="text-center">Laravel</h4>
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.col-md-2 -->
-
-                        <div class="col-sm-4 col-md-2">
-                            <div class="item">
-                                <div class="circle">
-                                    <span class="item-progress" data-percent="45"></span>
-                                </div>
-                                <!-- //.circle -->
-
-                                <span class="percent">45%</span>
-
-                                <h4 class="text-center">Photoshop</h4>
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.col-md-2 -->
-
-                        <div class="col-sm-4 col-md-2">
-                            <div class="item">
-                                <div class="circle">
-                                    <span class="item-progress" data-percent="65"></span>
-                                </div>
-                                <!-- //.circle -->
-
-                                <span class="percent">65%</span>
-
-                                <h4 class="text-center">Cinema 4D</h4>
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.col-md-2 -->
-
-                        <div class="col-sm-4 col-md-2">
-                            <div class="item last">
-                                <div class="circle">
-                                    <span class="item-progress" data-percent="55"></span>
-                                </div>
-                                <!-- //.circle -->
-
-                                <span class="percent">55%</span>
-
-                                <h4 class="text-center">After Effects</h4>
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.col-md-2 -->
-                    </div>
-                    <!-- //.row -->
-                </div>
-                <!-- //CIRCLE CHART END -->
-            </div>
-            <!-- //.section-content -->
-        </div>
-        <!-- //.container -->
-    </section>
-    <!-- //SKILLS SECTION END -->
-    
-    
-    <!-- KNOWLEDGE SECTION START -->
     <section id="knowledge" class="section">
         <div class="container section-wrapper">
             <div class="section-content">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="section-title">Knowledge</h2>
+                        <h2 class="section-title editable">Tangible Skills</h2>
 
-                        <p class="section-subtitle">Human behavior flows from three main sources: desire, emotion, and knowledge.</p>
+                        <p class="section-subtitle editable">Human behavior flows from three main sources: desire, emotion, and knowledge.</p>
 
                         <span class="divider center"></span>
                     </div>
@@ -740,36 +610,16 @@ resumefile: assets/resume.pdf
                 
                 <!-- BAR CHART START -->
                 <div class="row">
+
+                    {% for skill in page.skills %}
                     <div class="col-sm-6 col-md-6">
                         <div class="bar-chart">
                             <div class="item">
-                                <h4>Brand Marketing</h4>
+                                <h4>{{ skill.name }}</h4>
 
                                 <div class="bar">
-                                    <span class="percent">45%</span>
-                                    <span class="item-progress" data-percent="45"></span>
-                                </div>
-                                <!-- //.bar -->
-                            </div>
-                            <!-- //.item -->
-
-                            <div class="item">
-                                <h4>Web Development</h4>
-
-                                <div class="bar">
-                                    <span class="percent">65%</span>
-                                    <span class="item-progress" data-percent="65"></span>
-                                </div>
-                                <!-- //.bar -->
-                            </div>
-                            <!-- //.item -->
-
-                            <div class="item">
-                                <h4>Digital Design</h4>
-
-                                <div class="bar">
-                                    <span class="percent">55%</span>
-                                    <span class="item-progress" data-percent="55"></span>
+                                    <span class="percent">{{ skill.level }}</span>
+                                    <span class="item-progress" data-percent="{{ skill.level }}"></span>
                                 </div>
                                 <!-- //.bar -->
                             </div>
@@ -778,45 +628,7 @@ resumefile: assets/resume.pdf
                         <!-- //.bar-chart -->
                     </div>
                     <!-- //.col-md-6 -->
-
-                    <div class="col-sm-6 col-md-6">
-                        <div class="bar-chart">
-                            <div class="item">
-                                <h4>Brand Design</h4>
-
-                                <div class="bar">
-                                    <span class="percent">45%</span>
-                                    <span class="item-progress" data-percent="45"></span>
-                                </div>
-                                <!-- //.bar -->
-                            </div>
-                            <!-- //.item -->
-
-                            <div class="item">
-                                <h4>Internet Marketing</h4>
-
-                                <div class="bar">
-                                    <span class="percent">65%</span>
-                                    <span class="item-progress" data-percent="65"></span>
-                                </div>
-                                <!-- //.bar -->
-                            </div>
-                            <!-- //.item -->
-
-                            <div class="item">
-                                <h4>Video Editing</h4>
-
-                                <div class="bar">
-                                    <span class="percent">55%</span>
-                                    <span class="item-progress" data-percent="55"></span>
-                                </div>
-                                <!-- //.bar -->
-                            </div>
-                            <!-- //.item -->
-                        </div>
-                        <!-- //.bar-chart -->
-                    </div>
-                    <!-- //.col-md-6 -->
+                    {% endfor %}
                 </div>
                 <!-- //BAR CHART END -->
             </div>
