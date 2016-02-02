@@ -1,0 +1,11 @@
+.services .item > .inner-content {
+  text-align: justify;
+}
+
+p.text-grey {
+	text-align: justify;
+}
+
+#knowledge {
+	padding-top: 100px;
+}
